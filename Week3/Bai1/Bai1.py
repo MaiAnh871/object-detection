@@ -13,8 +13,8 @@ N = data.shape[0]
 x = data[:, 0].reshape(-1, 1)
 y = data[:, 1].reshape(-1, 1)
 plt.scatter(x, y)
-plt.xlabel('mét vuông')
-plt.ylabel('giá')
+plt.xlabel('square meters')
+plt.ylabel('cost')
 
 x = np.hstack((np.ones((N, 1)), x))
 
