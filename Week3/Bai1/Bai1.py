@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
 #numOfPoint = 30
 #noise = np.random.normal(0,1,numOfPoint).reshape(-1,1)
 #x = np.linspace(30, 100, numOfPoint).reshape(-1,1)
@@ -21,12 +22,12 @@ w = np.array([0.,1.]).reshape(-1,1) # Initialize parameter of theta
 
 numOfIteration = 100 
 cost = np.zeros((numOfIteration,1))
-learning_rate = 0.000001 # alpha
+learning_rate = 0.000001            # Alpha
 
 for i in range(1, numOfIteration):
-    r = np.dot(x, w) - y
-    cost[i] = 0.5*np.sum(r*r)
-    w[0] -= learning_rate*np.sum(r)
+    r = np.dot(x, w) - y            # Error = x * theta - y
+    cost[i] = 0.5 * np.sum(r*r)     # Cost = 1/2 * sigma(error^2)
+    w[0] -= learning_rate*np.sum(r) # x = x – learning_rate * f'(x)
     # correct the shape dimension
     w[1] -= learning_rate*np.sum(np.multiply(r, x[:,1].reshape(-1,1)))
     print(cost[i])
