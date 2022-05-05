@@ -16,13 +16,13 @@ plt.scatter(x, y)
 plt.xlabel('square meters')
 plt.ylabel('cost')
 
-x = np.hstack((np.ones((N, 1)), x))
+x = np.hstack((np.ones((N, 1)), x)) # Add column of ones to x
+w = np.array([0.,1.]).reshape(-1,1) # Initialize parameter of theta
 
-w = np.array([0.,1.]).reshape(-1,1)
-
-numOfIteration = 100
+numOfIteration = 100 
 cost = np.zeros((numOfIteration,1))
-learning_rate = 0.000001
+learning_rate = 0.000001 # alpha
+
 for i in range(1, numOfIteration):
     r = np.dot(x, w) - y
     cost[i] = 0.5*np.sum(r*r)
@@ -36,4 +36,4 @@ plt.show()
 
 x1 = 50
 y1 = w[0] + w[1] * 50
-print('Giá nhà cho 50m^2 là : ', y1)
+print('Cost for 50m^2 house is : ', y1)
