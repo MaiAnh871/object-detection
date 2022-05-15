@@ -90,7 +90,7 @@ class NeuralNetwork:
         
 # Dataset 2
 data = pd.read_csv('dataset.csv').values
-N, d = data.shape
+N, d = data.shape # Salary and working time
 X = data[:, 0:d-1].reshape(-1, d-1)
 y = data[:, 2].reshape(-1, 1)
 
